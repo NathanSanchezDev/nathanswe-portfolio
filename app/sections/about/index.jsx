@@ -25,7 +25,7 @@ export function AboutSection() {
 						}}
 					>
 <p>
-  I'm Nathan Sanchez, a dedicated Software Engineer with a strong emphasis on cloud solutions and Full-Stack development using NextJS.
+  I am Nathan Sanchez, a dedicated Software Engineer with a strong emphasis on cloud solutions and Full-Stack development using NextJS.
 </p>
 <p>
   My passion for web development has driven me since 2022, leading me to explore diverse technologies and refine my skills in creating scalable web applications.
