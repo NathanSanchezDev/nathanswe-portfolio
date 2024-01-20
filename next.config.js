@@ -1,18 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: true,
-	swcMinify: true,
-	images: {
-		domains: ["cdn.sanity.io"]
-	},
-	webpack(config) {
-		config.module.rules.push({
-			test: /\.svg$/i,
-			issuer: /\.[jt]sx?$/,
-			use: ["@svgr/webpack"]
-		});
-		return config;
-	}
+    reactStrictMode: true,
+    swcMinify: true,
+    // If you have other image domains, add them here, otherwise, you can remove the images object
+    webpack(config) {
+        config.module.rules.push({
+            test: /\.svg$/i,
+            issuer: /\.[jt]sx?$/,
+            use: ["@svgr/webpack"]
+        });
+        return config;
+    }
 };
 
 module.exports = nextConfig;
