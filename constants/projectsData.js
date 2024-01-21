@@ -9,16 +9,16 @@ export const projectsData = [
         repoUrl: "https://github.com/NathanSanchezDev/sneakerProj", // URL to GitHub repository
         stack: ["Javascript", "CSS"], // Technologies used 
     },
-        //     {
-//         _id: '2',
-//         title: "Project Title 2",
-//         description: "Brief description of Project 2",
-//         category: "Next",
-//         images: ["url-to-image-2.jpg"], // Array of image URLs
-//         liveUrl: "url-to-live-project-2", // URL to live project
-//         repoUrl: "url-to-github-repo-2", // URL to GitHub repository
-//         stack: ["Angular", "Firebase", "HTML"], // Technologies used
-//     },
+            {
+        _id: '2',
+        title: "TrakFunding",
+        description: "Personal Finance Tracking App",
+        category: "Next",
+        images: ["projects/trakfundingdash.jpg", "projects/trakfundingreg.jpg"], // Array of image URLs
+        liveUrl: "https://trakfunding.vercel.app/", // URL to live project
+        repoUrl: "https://github.com/NathanSanchezDev/TrakFunding", // URL to GitHub repository
+        stack: ["React", "NextJS", "Typescript"], // Technologies used
+    },
 //     {
 //         _id: '3',
 //         title: "Project Title 3",
