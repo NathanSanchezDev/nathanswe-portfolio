@@ -18,7 +18,7 @@ export function Logo() {
 				exit={exit}
 				transition={transition}
 			>
-				{pathname === SITE_ROUTES.projects ? (
+				{pathname === SITE_ROUTES.projects || SITE_ROUTES.resume ? (
 					<Link href={SITE_ROUTES.home} aria-label="Go to home page" role="link">
 						{SITE_STRINGS.textLogo}
 					</Link>
