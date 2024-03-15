@@ -16,10 +16,10 @@ export function WelcomeSection() {
 
 	let [count, setCount] = useState(0);
 	const [text] = useState([
-		"build full-stack web apps with a focus on cloud integration.",
-		"transform designs into modern, user-centric interfaces.",
-		"create interactive UIs using React for seamless user experiences.",
-		"develop high-performance websites leveraging Next.js."
+		"build full-stack web apps.",
+		"design modern user interfaces.",
+		"create interactive UIs.",
+		"develop high-performance products."
 	]);
 
 	const onClick = (e) => scrollToEl(e);
