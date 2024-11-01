@@ -21,7 +21,7 @@ const resumeData = {
       location: "Naples, FL",
     },
   ],
-  programmingLanguages: ["Python", "JavaScript", "TypeScript"],
+  programmingLanguages: ["Python", "JavaScript", "TypeScript", ".NET (C#)"],
   skills: [
     "AWS (EC2, ELB, etc.)",
     "Terraform",
@@ -31,12 +31,26 @@ const resumeData = {
     "Flask",
     "Postgres",
     "MongoDB",
+    ".NET",
+    "Blazor",
+    "Entity Framework",
   ],
   experience: [
     {
+      company: "Fischer Identity",
+      role: "Software Engineer",
+      period: "April 2024 - Present",
+      location: "Naples, FL",
+      description: [
+        "Developing and maintaining the UI for Fischer Identity’s IAM portal as part of the DotNet team, with a focus on enhancing user experience using Blazor for the frontend and Entity Framework for backend data management.",
+        "Collaborating closely with backend engineers to ensure seamless integration with the IAM infrastructure.",
+        "Implementing secure user authentication mechanisms and improving the overall design of the portal to streamline user workflows using .NET technologies."
+      ],
+    },
+    {
       company: "Adaptive Computing",
       role: "Full-Stack Software Developer",
-      period: "November 2023 - Current",
+      period: "November 2023 - April 2024",
       location: "Naples, FL",
       description: [
         "Maintained and enhanced a cloud resource manager application, introducing an innovative image marketplace for the top 3 cloud providers, streamlining access and deployment for users.",
@@ -58,6 +72,19 @@ const resumeData = {
     },
   ],
   projects: [
+    {
+      name: "Fischer Identity IAM Portal",
+      role: "Full Stack Developer",
+      period: "April 2024 - Present",
+      location: "Naples, FL",
+      description: [
+        "Developing a comprehensive Identity and Access Management (IAM) portal, allowing users to manage access rights, streamline user authentication, and improve security across enterprise environments.",
+        "Utilizing Blazor for a responsive and intuitive front-end experience, enhancing user interactions with real-time updates and seamless navigation.",
+        "Leveraging Entity Framework in .NET for robust data management, ensuring secure and efficient backend operations.",
+        "Collaborating with backend teams to implement complex IAM features such as multi-factor authentication, role-based access control (RBAC), and user provisioning.",
+        "Contributing to the integration of secure authentication protocols and APIs, supporting secure and scalable infrastructure within the portal."
+      ],
+    },
     {
       name: "Adaptive Computing Demo Website",
       role: "Full Stack Developer",

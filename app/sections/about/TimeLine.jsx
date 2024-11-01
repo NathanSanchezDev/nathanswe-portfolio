@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { LazyMotion, domAnimation, useInView } from "framer-motion";
 
 const TimeLineData = [
-    { year: 2024, text: "Expanded my skills into cloud solutions and NextJS." },
+    { year: 2024, text: "Transfered tech stacks to the .NET enviorment utilizing Blazor for front end development." },
     { year: 2023, text: "Began working on my Fullstack skills and projects, focusing on web app development." },
     { year: 2022, text: "Deepened expertise in JavaScript frameworks, emphasizing React.js." },
     { year: 2021, text: "Started as a Freelance Software Developer, working with Frontend technologies." },

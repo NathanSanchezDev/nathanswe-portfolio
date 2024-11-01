@@ -24,21 +24,21 @@ export function AboutSection() {
 							transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
 						}}
 					>
-<p>
-  I am Nathan Sanchez, a dedicated Software Engineer with a strong emphasis on cloud solutions and Full-Stack development using NextJS.
-</p>
-<p>
-  My passion for web development has driven me since 2022, leading me to explore diverse technologies and refine my skills in creating scalable web applications.
-</p>
-<p>
-  Beginning my journey as a Freelance Frontend Developer, I quickly expanded my expertise to encompass full-stack projects, focusing on JavaScript frameworks like React.js.
-</p>
-<p className="my-3.5">
-  In 2023, I delved deeper into Full-Stack development, embracing the challenges of both backend and frontend technologies to build comprehensive web solutions.
-</p>
-<p>
-  Today, I continue to grow, focusing on cloud computing and advanced front-end technologies to deliver innovative and user-centric applications.
-</p>
+						<p>
+							I’m Nathan Sanchez, a Software Engineer with a strong focus on Full-Stack development and a specialization in .NET and cloud-based solutions.
+						</p>
+						<p>
+							Since 2022, my passion for web development has led me to dive into a variety of technologies, with a core emphasis on building scalable, user-focused applications.
+						</p>
+						<p>
+							I began as a Freelance Frontend Developer, primarily working with JavaScript frameworks like React.js. Over time, I expanded into full-stack development, building complete web solutions that integrate frontend and backend seamlessly.
+						</p>
+						<p className="my-3.5">
+							Throughout 2023, I deepened my expertise in .NET and Blazor, taking on complex projects that required both backend and frontend solutions, as well as experience in cloud infrastructure.
+						</p>
+						<p>
+							Today, I continue to evolve, focusing on cloud computing, advanced front-end frameworks, and delivering intuitive, efficient applications tailored to client needs.
+						</p>
 					</div>
 				</div>
 
