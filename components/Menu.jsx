@@ -54,7 +54,7 @@ export function Menu({ onClick = () => {} }) {
 		</m.div>
 	);
 
-	content = pathname === SITE_ROUTES.projects || pathname === SITE_ROUTES.resume
+	content = pathname === SITE_ROUTES.projects || pathname === SITE_ROUTES.resume || pathname === SITE_ROUTES.blog
 	? backMenu
 	: mainMenu;
 	
