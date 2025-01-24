@@ -1,3 +1,5 @@
+"use client";
+
 import { Suspense, useRef } from "react";
 import { domAnimation, LazyMotion, useInView } from "framer-motion";
 import Link from "next/link";

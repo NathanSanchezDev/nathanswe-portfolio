@@ -11,12 +11,23 @@ import { MENU_OPTIONS, SITE_ROUTES, SITE_STRINGS } from "../constants";
 export function Menu({ onClick = () => {} }) {
 	let content, mainMenu, backMenu;
 	const pathname = usePathname();
-	const { scrollToEl } = useScrollTo();
+	useScrollTo();
 
 	const sortAscending = (a, b) => a.id - b.id;
 
-	const handleOnClick = (e) => {
-		scrollToEl(e);
+	const handleOnClick = (e, isHashLink) => {
+		e.preventDefault();
+		if (isHashLink) {
+			const hash = e.target.hash;
+			const offsetTop = document.querySelector(hash)?.offsetTop || 0;
+			window.scrollTo({
+				top: offsetTop - height,
+				behavior: "smooth",
+			});
+		} else {
+			window.location.href = e.target.href;
+		}
+	
 		window.setTimeout(() => onClick(), 350);
 	};
 

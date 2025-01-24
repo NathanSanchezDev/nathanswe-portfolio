@@ -1,3 +1,4 @@
+"use client";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { useTheme } from "next-themes";
