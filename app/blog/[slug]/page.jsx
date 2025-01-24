@@ -39,15 +39,14 @@ export default async function BlogPostPage({ params }) {
                 {/* Blog Content */}
                 <div className="md:w-3/4">
                     <h1
-                        className="text-5xl font-extrabold mb-8 text-white 
-                       text-center md:text-left border-b-2 
-                       border-gray-700 pb-4"
+                        className="text-5xl font-extrabold mb-8
+                       text-center md:text-left border-b-2 pb-4"
                     >
                         {post.title}
                     </h1>
 
                     {post.comingSoon ? (
-                        <p className="text-gray-300 text-xl text-center mt-8">
+                        <p className="text-xl text-center mt-8">
                             This blog post is coming soon.
                         </p>
                     ) : (
@@ -58,7 +57,7 @@ export default async function BlogPostPage({ params }) {
                                         return (
                                             <p
                                                 key={index}
-                                                className="text-gray-300 leading-relaxed mb-6"
+                                                className="leading-relaxed mb-6"
                                                 dangerouslySetInnerHTML={{
                                                     __html: section.text || '',
                                                 }}
@@ -70,7 +69,7 @@ export default async function BlogPostPage({ params }) {
                                             return (
                                                 <h2
                                                     key={index}
-                                                    className="text-4xl font-bold text-white mt-8 mb-4"
+                                                    className="text-4xl font-bold mt-8 mb-4"
                                                 >
                                                     {section.text}
                                                 </h2>
@@ -79,7 +78,7 @@ export default async function BlogPostPage({ params }) {
                                             return (
                                                 <h3
                                                     key={index}
-                                                    className="text-3xl font-bold text-white mt-8 mb-4"
+                                                    className="text-3xl font-bold mt-8 mb-4"
                                                 >
                                                     {section.text}
                                                 </h3>
@@ -90,7 +89,7 @@ export default async function BlogPostPage({ params }) {
                                         return (
                                             <ul
                                                 key={index}
-                                                className="list-disc ml-6 text-gray-300 
+                                                className="list-disc ml-6 
                                    leading-relaxed mb-6"
                                             >
                                                 {(section.items || []).map((item, itemIndex) => (
@@ -113,21 +112,21 @@ export default async function BlogPostPage({ params }) {
                 {/* Suggested Posts on the Right */}
                 {suggestedBlogs.length > 0 && (
                     <div className="md:w-1/4 md:ml-8 sticky top-4 hidden md:block">
-                        <h2 className="text-3xl font-bold text-white mb-4">
+                        <h2 className="text-3xl font-bold mb-4">
                             Other Blog Posts
                         </h2>
                         <div className="space-y-4">
                             {suggestedBlogs.slice(0, 2).map((suggestedPost) => (
                                 <Link href={`/blog/${suggestedPost.slug}`} key={suggestedPost.slug}>
                                     <div
-                                        className="bg-gray-800 p-4 rounded-lg shadow-lg
+                                        className="p-4 rounded-lg shadow-lg
                                hover:shadow-xl transition-shadow
                                cursor-pointer"
                                     >
-                                        <h3 className="text-xl font-semibold text-white mb-2">
+                                        <h3 className="text-xl font-semibold mb-2">
                                             {suggestedPost.title}
                                         </h3>
-                                        <p className="text-gray-400">
+                                        <p>
                                             {suggestedPost.description}
                                         </p>
                                         <span className="text-blue-500 hover:underline">
@@ -145,7 +144,7 @@ export default async function BlogPostPage({ params }) {
             <div className="fixed bottom-8 right-8 z-50">
                 <Link href="/blog">
                     <button
-                        className="px-4 py-2 bg-blue-600 text-white 
+                        className="px-4 py-2 bg-blue-600
                        rounded-lg shadow-md hover:bg-blue-500 transition"
                     >
                         ← Back to Blogs
