@@ -25,4 +25,33 @@
 	.icon-link-btn--active {
 		@apply bg-badge-light dark:bg-badge-dark;
 	}
+	.line-clamp-2 {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	  }
+	  
+	  .line-clamp-3 {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	  }
+	  .aspect-w-16 {
+		aspect-ratio: 16 / 9;
+	  }
+	  .group:hover .btn {
+		@apply bg-blue-500;
+	  }
+	  
+	  .group:hover {
+		transform: scale(1.05);
+	  }
+	  
+	  .group:hover .shadow-md {
+		@apply shadow-xl;
+	  }
 }
