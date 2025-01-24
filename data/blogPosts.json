@@ -222,5 +222,95 @@
         },
         "comingSoon": false,
         "date": "January 22, 2025"
+    },
+    {
+        "id": 3,
+        "slug": "building-minecraft-servers",
+        "title": "How I Learned to Code by Building Minecraft Servers",
+        "description": "A look at how building a Minecraft MMO server at 16 ignited my passion for coding and helped me develop valuable skills.",
+        "comingSoon": false,
+        "date": "January 24, 2025",
+        "content": {
+            "sections": [
+                {
+                    "type": "paragraph",
+                    "text": "In 2016, at the age of 16, I embarked on an unforgettable journey into coding through something I loved: Minecraft. Alongside my friend Nick, I spent countless nights building a custom Minecraft server. Little did I know, those late-night coding sessions would become the foundation of my career as a developer."
+                },
+                {
+                    "type": "heading",
+                    "text": "The Birth of an MMO",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Nick was already familiar with Java, and he took on the role of teacher while I was the eager student. We started small—customizing plugins and tweaking settings. But as our confidence grew, so did our ambition. We decided to create something bigger: an MMO-style Minecraft server with quests, custom NPCs, and a fully-fledged economy."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Our server, fueled by passion and a lot of trial and error, became a hit. At its peak, it was averaging 300 daily players. For a couple of teenagers, it felt like running a small tech company. We handled everything from server maintenance to player feedback and even managed a small staff of volunteer moderators. It was my first taste of what it meant to build and sustain a technical product."
+                },
+                {
+                    "type": "heading",
+                    "text": "Lessons in Persistence and Teamwork",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Every night was a new challenge. Whether it was debugging server crashes, optimizing performance to handle hundreds of players, or learning how to write efficient code, we were constantly solving problems. Nick’s patience and guidance were invaluable, and over time, I started contributing more to the codebase, writing custom features that players loved."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "We learned how to split responsibilities effectively. Nick focused on more advanced server mechanics, while I took charge of scripting custom quests and managing player engagement. This division of labor taught me the importance of collaboration and leveraging each other's strengths."
+                },
+                {
+                    "type": "heading",
+                    "text": "Adoption into a Larger MMO",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The server’s popularity eventually caught the attention of a larger Minecraft MMO network. They reached out to us with an offer to integrate our server into their platform. Joining forces with a professional team was both exciting and humbling. Seeing something we built with no prior experience become part of a larger project was a surreal moment. Even today, the server lives on, a testament to the countless hours of effort we put in."
+                },
+                {
+                    "type": "heading",
+                    "text": "The Spark That Lit the Fire",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Looking back, those nights coding and troubleshooting with Nick were where my passion for software development truly began. I didn’t have formal training, but the hands-on experience taught me more than any textbook could. It sparked a curiosity and drive that continues to fuel my career today."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Building that Minecraft server taught me persistence, problem-solving, and the importance of collaboration—skills that have been invaluable as I’ve grown as a developer. It was more than just a game; it was the start of a lifelong journey into the world of technology."
+                },
+                {
+                    "type": "heading",
+                    "text": "Advice for Aspiring Developers",
+                    "level": 2
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "<strong>Start with What You Love:</strong> Whether it’s games, art, or any other passion, use it as a gateway to learn coding."
+                        },
+                        {
+                            "text": "<strong>Collaborate:</strong> Partnering with someone more experienced can accelerate your learning and make the process more fun."
+                        },
+                        {
+                            "text": "<strong>Embrace Challenges:</strong> Debugging and problem-solving are where the real learning happens."
+                        },
+                        {
+                            "text": "<strong>Keep Building:</strong> Every project, no matter how small, is a step toward mastery."
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If you’re just starting out, remember: it’s okay to not know everything. The key is to dive in, stay curious, and enjoy the process. Who knows? That passion project you start today might just become the foundation of your future."
+                }
+            ]
+        }
     }
 ]
