@@ -35,7 +35,7 @@ export function AboutSection() {
 						style={animationStyles}
 					>
 						<p>
-							I'm Nathan Sanchez, a Software Engineer focused on building
+							I&apos;m Nathan Sanchez, a Software Engineer focused on building
 							scalable solutions across the full technology stack. I specialize
 							in creating efficient systems that combine technical excellence
 							with exceptional user experience.
@@ -43,21 +43,21 @@ export function AboutSection() {
 
 						<p>
 							My expertise centers on cloud-native architectures and modern
-							technologies including .NET Core, TypeScript, and Go. I've
+							technologies including .NET Core, TypeScript, and Go. I&apos;ve
 							developed everything from distributed systems to responsive
 							front-end applications, embracing the full scope of software
 							development.
 						</p>
 
 						<p>
-							Throughout my career, I've led enterprise system development
+							Throughout my career, I&apos;ve led enterprise system development
 							and maintained active involvement in open-source projects.
 							This includes building developer tools, optimizing large-scale
 							applications, and implementing robust cloud infrastructure.
 						</p>
 
 						<p>
-							Currently, I'm focused on advancing cloud architectures and
+							Currently, I&apos;m focused on advancing cloud architectures and
 							contributing to the developer community through open-source
 							work. I remain committed to continuous learning and technical
 							innovation in software development.
