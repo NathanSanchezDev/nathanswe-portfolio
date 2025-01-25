@@ -1,48 +1,69 @@
 "use client";
 
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { LazyMotion, domAnimation, useInView } from "framer-motion";
-import { HeadingDivider } from "components";
-import { TimeLine } from "./TimeLine";
+
+const HeadingDivider = ({ title }) => (
+	<div className="w-full flex flex-col gap-2">
+		<h2 className="text-3xl font-bold">
+			{title}
+		</h2>
+		<div className="h-1 w-32 bg-blue-500 rounded" />
+	</div>
+);
 
 export function AboutSection() {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true });
 
+	const animationStyles = {
+		transform: isInView ? "none" : "translateX(-200px)",
+		opacity: isInView ? 1 : 0,
+		transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+	};
+
 	return (
 		<LazyMotion features={domAnimation}>
 			<section id="about" className="section">
 				<HeadingDivider title="About me" />
+
 				<div className="pt-10 pb-16 max-w-5xl flex flex-col gap-3">
 					<div
-						tabIndex="0"
 						ref={ref}
-						className="text-xl font-light leading-relaxed"
-						style={{
-							transform: isInView ? "none" : "translateX(-200px)",
-							opacity: isInView ? 1 : 0,
-							transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-						}}
+						tabIndex="0"
+						className="text-xl font-light leading-relaxed space-y-6"
+						style={animationStyles}
 					>
 						<p>
-							I’m Nathan Sanchez, a Software Engineer with a strong focus on Full-Stack development and a specialization in .NET and cloud-based solutions.
+							I'm Nathan Sanchez, a Software Engineer focused on building
+							scalable solutions across the full technology stack. I specialize
+							in creating efficient systems that combine technical excellence
+							with exceptional user experience.
 						</p>
+
 						<p>
-							Since 2022, my passion for web development has led me to dive into a variety of technologies, with a core emphasis on building scalable, user-focused applications.
+							My expertise centers on cloud-native architectures and modern
+							technologies including .NET Core, TypeScript, and Go. I've
+							developed everything from distributed systems to responsive
+							front-end applications, embracing the full scope of software
+							development.
 						</p>
+
 						<p>
-							I began as a Freelance Frontend Developer, primarily working with JavaScript frameworks like React.js. Over time, I expanded into full-stack development, building complete web solutions that integrate frontend and backend seamlessly.
+							Throughout my career, I've led enterprise system development
+							and maintained active involvement in open-source projects.
+							This includes building developer tools, optimizing large-scale
+							applications, and implementing robust cloud infrastructure.
 						</p>
-						<p className="my-3.5">
-							Throughout 2023, I deepened my expertise in .NET and Blazor, taking on complex projects that required both backend and frontend solutions, as well as experience in cloud infrastructure.
-						</p>
+
 						<p>
-							Today, I continue to evolve, focusing on cloud computing, advanced front-end frameworks, and delivering intuitive, efficient applications tailored to client needs.
+							Currently, I'm focused on advancing cloud architectures and
+							contributing to the developer community through open-source
+							work. I remain committed to continuous learning and technical
+							innovation in software development.
 						</p>
 					</div>
 				</div>
-
-				<TimeLine />
 			</section>
 		</LazyMotion>
 	);

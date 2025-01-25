@@ -16,10 +16,10 @@ export function WelcomeSection() {
 
 	let [count, setCount] = useState(0);
 	const [text] = useState([
-		"build full-stack web apps.",
-		"design modern user interfaces.",
-		"create interactive UIs.",
-		"develop high-performance products."
+		"architect enterprise systems",
+		"optimize cloud performance",
+		"build developer libraries",
+		"deploy scalable solutions"
 	]);
 
 	const onClick = (e) => scrollToEl(e);
@@ -52,7 +52,7 @@ export function WelcomeSection() {
 							}}
 						>
 							<p>
-								Hi, I&apos;m <mark>Nathan</mark> a <mark>passionate</mark> software developer.
+								Hi, I&apos;m <mark>Nathan</mark> a <mark>passionate</mark> software engineer.
 							</p>
 						</h1>
 
