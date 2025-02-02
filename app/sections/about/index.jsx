@@ -25,7 +25,6 @@ export function AboutSection() {
 	return (
 		<LazyMotion features={domAnimation}>
 			<section id="about" className="section">
-				<HeadingDivider title="About me" />
 
 				<div className="pt-10 pb-16 max-w-5xl flex flex-col gap-3">
 					<div
@@ -34,6 +33,7 @@ export function AboutSection() {
 						className="text-xl font-light leading-relaxed space-y-6"
 						style={animationStyles}
 					>
+						<HeadingDivider title="About me" />
 						<p>
 							I&apos;m Nathan Sanchez, a Software Engineer focused on building
 							scalable solutions across the full technology stack. I specialize
