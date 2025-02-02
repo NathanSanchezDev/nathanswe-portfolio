@@ -1,6 +1,6 @@
 [
     {
-        "id": 2,
+        "id": 1,
         "slug": "my-first-nuget-package",
         "title": "My First NuGet Package: The AI Helper Library",
         "description": "A personal exploration of how I built and published the AI Helper Library for .NET developers to streamline OpenAI integrations.",
@@ -125,7 +125,7 @@
         "date": "January 21, 2025"
     },
     {
-        "id": 1,
+        "id": 2,
         "slug": "from-produce-to-dev",
         "title": "From Produce Manager to Software Engineer: My Early Developer Journey",
         "description": "A look at how I went from self-taught coding sessions on an iPad to building HPC cluster demos and identity solutions in under two years.",
@@ -312,5 +312,139 @@
                 }
             ]
         }
-    }
+    },
+    {
+        "id": 4,
+        "slug": "first-tech-job",
+        "title": "How I Landed My First Tech Role: A Journey from Passion to Profession",
+        "description": "A detailed recount of my journey—from early coding adventures and a hiatus while working at Publix to re-igniting my passion with 100Devs and ultimately landing my first tech role at an innovative HPC company.",
+        "comingSoon": false,
+        "date": "February 2, 2025",
+        "content": {
+          "sections": [
+            {
+              "type": "paragraph",
+              "text": "Landing my first tech role was more than just a career milestone—it was the culmination of years of hard work, passion, and relentless curiosity. My journey has been full of twists and turns, from early coding experiments to an unexpected hiatus, and finally to a triumphant return to the world of software engineering."
+            },
+            {
+              "type": "heading",
+              "text": "The Early Days: Discovering My Passion",
+              "level": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "I still remember the excitement of writing my first line of code. As a teenager, I was captivated by the endless possibilities of technology. Passion projects, like building custom Minecraft servers, weren’t just about gaming—they were my first taste of problem-solving, creativity, and innovation. These experiences laid the foundation for everything that came later."
+            },
+            {
+              "type": "heading",
+              "text": "An Unexpected Detour: The Hiatus from Coding",
+              "level": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Life, however, has its own plans. Around 2019, I found myself stepping away from coding to focus on everyday responsibilities. From 2017 to 2023, I worked full-time at Publix as an assistant produce manager. While I was dedicated to my role in the grocery store—learning invaluable lessons in teamwork, management, and resilience—coding had to take a backseat."
+            },
+            {
+              "type": "heading",
+              "text": "Reigniting the Flame: A Return to Code",
+              "level": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "In 2022, I decided it was time to reconnect with my passion for technology. I joined 100Devs as an apprentice, where I was introduced to modern web development using the MERN stack. I started with small projects—simple landing pages that gradually evolved into more complex customer and client projects. Even while balancing my responsibilities at Publix, I dedicated my evenings and weekends to coding, reigniting the spark that had never truly faded."
+            },
+            {
+              "type": "heading",
+              "text": "Building My Skillset: From DIY Projects to Professional Preparation",
+              "level": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Transitioning from hobbyist projects to professional-grade skills required a focused and disciplined approach. I immersed myself in mastering the fundamentals—data structures, algorithms, and system design—through online courses, coding bootcamps, and hackathons. Every new challenge was a chance to bridge the gap between theory and practice, and my apprenticeship with 100Devs was the perfect catalyst for this growth."
+            },
+            {
+              "type": "heading",
+              "text": "The Turning Point: Deciding to Go Pro",
+              "level": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "There came a moment when I realized that my revived passion for coding was more than just a personal interest—it was the gateway to a fulfilling career. I began refining my resume and compiling a portfolio that showcased both my early projects and the new skills I was acquiring. The combination of hands-on experience from my youth and my recent intensive learning set me apart from the crowd."
+            },
+            {
+              "type": "heading",
+              "text": "The Application Process: Persistence and Preparation",
+              "level": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "The road to my first tech role wasn’t easy. I spent countless hours perfecting my resume and cover letters, ensuring they told the story of a journey filled with both passion and perseverance. I prepared rigorously for technical interviews by solving coding challenges and engaging in mock interviews. One of the most challenging—and rewarding—experiences was the technical interview at a leading HPC company, where I had to demonstrate not only my technical acumen but also my ability to learn and adapt."
+            },
+            {
+              "type": "heading",
+              "text": "Overcoming Doubts and Embracing Growth",
+              "level": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "No journey is without its share of self-doubt. Every rejection and every difficult interview momentarily shook my confidence. But I learned to view these setbacks as opportunities to improve. I kept a journal to document my experiences, which helped me track my progress and stay motivated even during the toughest times. Each challenge, whether in the grocery aisles or the coding bootcamps, contributed to my growth."
+            },
+            {
+              "type": "heading",
+              "text": "Lessons Learned: Advice for Aspiring Developers",
+              "level": 2
+            },
+            {
+              "type": "list",
+              "items": [
+                {
+                  "text": "<strong>Never Stop Learning:</strong> The tech world is ever-evolving. Embrace every opportunity to learn and adapt."
+                },
+                {
+                  "text": "<strong>Embrace Failure:</strong> Every setback is a lesson. Don’t fear mistakes—they’re a vital part of the growth process."
+                },
+                {
+                  "text": "<strong>Balance is Key:</strong> Life may lead you down unexpected paths. Even if you need to step away from coding for a while, your passion will always find its way back."
+                },
+                {
+                  "text": "<strong>Network Relentlessly:</strong> Building a supportive community can open doors and provide invaluable insights."
+                },
+                {
+                  "text": "<strong>Be Persistent:</strong> Success rarely comes overnight. Stay committed to your goals, and keep pushing forward."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "These lessons have not only helped me secure my first tech role but continue to guide me as I navigate the ever-changing landscape of technology. Every experience—from the long hours at Publix to the late nights coding—has been a building block in my career."
+            },
+            {
+              "type": "heading",
+              "text": "Final Thoughts: The Journey Continues",
+              "level": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Securing my first tech job was a dream come true—a validation of all the sacrifices, challenges, and late nights. Yet, I know that this is only the beginning. Every day in my new role presents fresh challenges, opportunities to learn, and moments to grow. My journey has been far from linear, and the experiences during my hiatus at Publix have taught me that every detour is part of the adventure."
+            },
+            {
+              "type": "paragraph",
+              "text": "To anyone aspiring to break into tech: embrace every chapter of your story. Your passion, persistence, and unique journey are what set you apart. The road may twist and turn, but every step brings you closer to your dreams."
+            },
+            {
+              "type": "heading",
+              "text": "Looking to the Future",
+              "level": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "As I reflect on my journey, I feel immense gratitude for every experience that has shaped me into the developer I am today. My first tech role isn’t the end—it’s a launchpad for even greater adventures in the tech world. I’m excited to tackle new challenges, explore emerging technologies, and continue building a career fueled by passion and resilience."
+            },
+            {
+              "type": "paragraph",
+              "text": "The future is bright, and I am ready for the next chapter. Here’s to new beginnings, continuous growth, and a career built on dedication, hard work, and an unyielding love for technology."
+            }
+          ]
+        }
+      }      
 ]
