@@ -9,7 +9,7 @@ export default function BlogCard({ blog, index }) {
     return (
         <article
             ref={cardRef}
-            className="rounded-lg shadow-md bg-card-light dark:bg-card-dark p-6"
+            className="rounded-lg shadow-md bg-card-light dark:bg-card-dark p-6 flex flex-col"
             style={{
                 transform: isInView ? "none" : `translateY(${100 + index * 50}px)`,
                 opacity: isInView ? 1 : 0,
@@ -20,9 +20,11 @@ export default function BlogCard({ blog, index }) {
                 <h3 className="text-xl font-bold mb-2">{blog.title}</h3>
                 <p>{blog.date}</p>
             </header>
-            <p className="my-4">{blog.description}</p>
+            <div className="flex-grow my-4">
+                <p className="line-clamp-3">{blog.description}</p>
+            </div>
             <footer>
-                <Link href={`/blog/${blog.slug}`} className="text-blue-500 hover:underline">
+                <Link href={`/blog/${blog.slug}`} className="text-blue-500 hover:underline mt-auto">
                     Read More →
                 </Link>
             </footer>
