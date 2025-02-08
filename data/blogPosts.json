@@ -647,5 +647,156 @@
                 }
             ]
         }
+    },
+    {
+        "id": 6,
+        "slug": "understanding-distributed-systems",
+        "title": "Understanding Distributed Systems: A Developer's Awakening",
+        "description": "A deep dive into my journey of understanding distributed systems and how they reshape scalability, fault tolerance, and performance.",
+        "author": "Nathan Sanchez",
+        "date": "February 8, 2025",
+        "content": {
+            "sections": [
+                {
+                    "type": "paragraph",
+                    "text": "I watched two great videos today that completely shifted my perspective on distributed systems:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "[Explaining Distributed Systems Like I'm 5](https://www.youtube.com/watch?v=CESKgdNiKJw)"
+                        },
+                        {
+                            "text": "[Distributed Systems in One Lesson by Tim Berglund](https://www.youtube.com/watch?v=Y6Ev8GIlbxc)"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I had some surface-level knowledge of distributed systems before, but I didn’t quite have the vocabulary to explain them. I knew about the concepts—I just didn't realize they had names! After watching these videos, things really started clicking for me."
+                },
+                {
+                    "type": "heading",
+                    "text": "What Are Distributed Systems?",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "At their core, distributed systems are a collection of independent computers that work together as a single system. Unlike traditional monolithic architectures where everything runs on a single server, distributed systems spread the workload across multiple nodes to improve scalability, fault tolerance, and performance."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "**Decentralization:** No single point of failure; components work independently."
+                        },
+                        {
+                            "text": "**Scalability:** Can handle increasing workloads by adding more nodes."
+                        },
+                        {
+                            "text": "**Fault Tolerance:** If one node fails, others continue to operate."
+                        },
+                        {
+                            "text": "**Concurrency:** Multiple operations happen simultaneously."
+                        },
+                        {
+                            "text": "**Consistency & Availability:** Often requires a tradeoff, which is where concepts like the **CAP theorem** come in."
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Breaking Out of the 'Web Developer' Mindset",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "At my current company, we use containers, Kubernetes, multiple databases, an API server, and a queue system for notifications. By definition, we're already working with a distributed system. But after years of working primarily in web development, I had this narrow mindset where I saw everything in isolated chunks—frontend, backend, database, done. I never truly thought about how systems scale beyond that."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "One example from the videos that helped me digest this was the **ice cream shop analogy** from *Explaining Distributed Systems Like I'm 5*. Imagine an ice cream shop where customers place orders at a single counter, and one worker has to scoop every order, mix flavors, and serve customers individually. As the shop grows, this approach becomes unsustainable. To scale, the shop introduces different stations—one for scooping, one for mixing, one for serving—allowing multiple orders to be processed simultaneously. Similarly, in distributed systems, rather than processing a 10GB upload through a single server, we distribute tasks using **object storage** like AWS S3, a **queue system**, and different **service layers** to handle requests asynchronously, ensuring scalability and efficiency."
+                },
+                {
+                    "type": "heading",
+                    "text": "The CAP Theorem: Balancing Consistency, Availability, and Partition Tolerance",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "One of the fundamental principles in distributed systems is the **CAP theorem**, which states that a system can only guarantee two out of three properties:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "**Consistency** - Every read receives the most recent write or an error."
+                        },
+                        {
+                            "text": "**Availability** - Every request receives a response, even if it’s outdated."
+                        },
+                        {
+                            "text": "**Partition Tolerance** - The system continues operating despite network failures."
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "For example, databases like MongoDB prioritize availability and partition tolerance (AP), while PostgreSQL emphasizes consistency and partition tolerance (CP). Understanding these tradeoffs helps in designing systems based on specific needs."
+                },
+                {
+                    "type": "heading",
+                    "text": "Thinking in Systems, Not Just Components",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "What really blew my mind was realizing how distributed systems ensure resilience. Instead of everything being a single, fragile monolith, these systems operate in orchestrations. If one instance dies, another one picks up the slack. If all instances of a specific service go down, that functionality alone is affected—not the entire system."
+                },
+                {
+                    "type": "heading",
+                    "text": "Practical Components of Distributed Systems",
+                    "level": 2
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "**Load Balancers:** These distribute incoming traffic across multiple servers to prevent overload and ensure optimal performance. Examples include **NGINX**, **HAProxy**, and **AWS Elastic Load Balancer**."
+                        },
+                        {
+                            "text": "**Message Queues:** Instead of processing requests immediately, queues help in handling tasks asynchronously. Examples include **RabbitMQ**, **Kafka**, and **Amazon SQS**."
+                        },
+                        {
+                            "text": "**Databases in Distributed Systems:** Traditional relational databases struggle in distributed environments due to ACID constraints. Instead, distributed databases like **Cassandra**, **CockroachDB**, and **Google Spanner** are designed to scale horizontally."
+                        },
+                        {
+                            "text": "**Object Storage:** For handling large files, **Amazon S3**, **Google Cloud Storage**, and **MinIO** provide efficient, scalable solutions."
+                        },
+                        {
+                            "text": "**Orchestration Tools:** Tools like **Kubernetes** and **Docker Swarm** help manage distributed applications efficiently."
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Expanding My Knowledge",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This whole learning experience made me realize that I need to break out of my 'small component' way of thinking. We’re not just building applications—we’re building **scalable, fault-tolerant systems** that power real-world applications at massive scales."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Now, I’m diving deeper. I’ve already started multiple projects to explore distributed system concepts firsthand, because the best way to solidify knowledge is by **building something real**."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If you’re like me and have been focused on web development for a long time, I highly recommend taking a step back and looking at the bigger picture. **How does your system scale? How does it recover from failure? What happens when demand spikes?**"
+                }
+            ]
+        }
     }
 ]
