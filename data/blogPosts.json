@@ -798,5 +798,191 @@
                 }
             ]
         }
-    }
+    },
+    {
+        "id": 7,
+        "slug": "building-go-insight",
+        "title": "Building Go-Insight: A Distributed Observability System in Go",
+        "description": "A deep dive into building Go-Insight, a scalable distributed logging and metrics system, and why this project matters for backend observability.",
+        "author": "Nathan Sanchez",
+        "date": "March 2, 2025",
+        "content": {
+            "sections": [
+                {
+                    "type": "paragraph",
+                    "text": "Observability is a crucial part of modern backend systems, yet many solutions feel bloated, expensive, or overly complex. I wanted to build something lightweight, self-hosted, and extensible—a distributed logging and metrics system that developers can use on their own infrastructure. That’s how Go-Insight was born."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Today, I spent the entire day laying the foundation for this project, focusing on database design, log ingestion, and setting up the API. While there's still a long way to go, the progress made today has given me a clear direction for where this system is headed."
+                },
+                {
+                    "type": "heading",
+                    "text": "📌 What is Go-Insight?",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Go-Insight is a lightweight, distributed observability platform designed to collect and store logs, metrics, and traces from backend applications. The goal is to provide a self-hosted alternative to enterprise observability tools like Datadog and New Relic, but with a focus on developer flexibility and ease of deployment."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "🚀 **Log Collection** - Ingest structured logs from any backend service."
+                        },
+                        {
+                            "text": "📊 **Metrics Tracking** - Capture API response times, error rates, and custom performance metrics."
+                        },
+                        {
+                            "text": "🌐 **Self-Hosted** - Deploy on your own infrastructure using Docker/Kubernetes."
+                        },
+                        {
+                            "text": "🔌 **Middleware for Any Language** - Plan to support integrations with C#, Python, Go, and more."
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "🎯 Why Build This?",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I've always been interested in backend systems and observability, but most existing tools are either proprietary, expensive, or come with too much overhead for smaller applications. Go-Insight is meant to be lightweight and developer-friendly, something you can spin up quickly and start collecting logs and metrics without complex configurations."
+                },
+                {
+                    "type": "heading",
+                    "text": "🛠️ Setting Up the Core",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The first step was structuring the project properly. I designed Go-Insight to follow a modular architecture, separating concerns for API handlers, database logic, and observability utilities."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "**PostgreSQL as the Database** - Chosen for its performance and strong ACID compliance."
+                        },
+                        {
+                            "text": "**Gorilla Mux for Routing** - A lightweight yet powerful router for handling API endpoints."
+                        },
+                        {
+                            "text": "**Environment Variables for Configuration** - Avoids hardcoded credentials and allows flexibility in deployment."
+                        },
+                        {
+                            "text": "**Docker for Local Development** - Makes it easy to spin up a database and test API endpoints in an isolated environment."
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "📊 Logs and Metrics: Database Schema",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I started by designing the database schema for logs and metrics. These tables serve as the foundation for all observability data collected by Go-Insight."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "**Logs Table:** Stores structured log entries, including timestamps, service names, log levels, and messages."
+                        },
+                        {
+                            "text": "**Metrics Table:** Tracks API response times, error rates, and request metadata."
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "🔗 API Endpoints Implemented",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "To interact with the system, I built the first API endpoints for log and metrics ingestion."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "**POST /logs** → Accepts structured log data from any backend service."
+                        },
+                        {
+                            "text": "**POST /metrics** → Stores API performance data like response times and status codes."
+                        },
+                        {
+                            "text": "**GET /logs** → Fetches stored logs for debugging and analysis."
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "🌍 Expanding the Ecosystem",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "One of the key ideas behind Go-Insight is that it will be **language-agnostic**. This means developers should be able to integrate it into their backend applications without friction."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "To achieve this, I plan to develop middleware for multiple languages. Each middleware package will act as a lightweight client that formats and sends logs/metrics to Go-Insight."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "**dotnet-go-insight-mw** → A C# NuGet package for .NET developers."
+                        },
+                        {
+                            "text": "**python-go-insight-mw** → A Python package for Flask/Django apps."
+                        },
+                        {
+                            "text": "**go-insight-mw** → Native Go client for direct integration."
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "🛠️ What’s Next?",
+                    "level": 2
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "✅ Finalize database migrations and data retention policies."
+                        },
+                        {
+                            "text": "✅ Add a UI for visualizing logs and metrics."
+                        },
+                        {
+                            "text": "✅ Implement real-time log streaming with WebSockets."
+                        },
+                        {
+                            "text": "✅ Explore integrations with OpenTelemetry & Fluent Bit."
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "🚀 Final Thoughts",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This project is already proving to be a fantastic learning experience. I’m refining my Go skills, getting deeper into distributed logging, and gaining hands-on experience with observability—something that directly aligns with my career goals."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If you’re interested in observability, logging, or backend engineering, follow along as I continue building Go-Insight. I’ll be sharing progress updates, challenges, and lessons learned."
+                }
+            ]
+        }
+    }    
 ]
