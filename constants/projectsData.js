@@ -13,6 +13,17 @@ export const projectsData = [
     },
     {
         _id: '2',
+        title: "Go-Insight",
+        description: "A lightweight, self-hosted observability platform that collects, stores, and analyzes logs, metrics, and distributed traces in one unified system for comprehensive application monitoring",
+        category: "Observability Platform",
+        images: [
+            "projects/goinsight.png"
+        ],
+        repoUrl: "https://github.com/NathanSanchezDev/go-insight",
+        stack: ["Go", "PostgreSQL", "Docker", "RESTful API", "Gorilla Mux"]
+    },
+    {
+        _id: '3',
         title: "AdaptiveAI Platform",
         description: "Scalable demo platform for HPC/AI evaluation, featuring multi-tenant isolation, automated resource orchestration, and E4S scientific stack integration",
         category: "Cloud",
@@ -26,7 +37,7 @@ export const projectsData = [
         stack: ["Next.js", "TypeScript", "Go", "MongoDB", "AWS"]
     },
     {
-        _id: '3',
+        _id: '4',
         title: "PRism.dev",
         description: "AI-powered code review platform supporting multiple languages with real-time analysis. Features include instant feedback, language-agnostic reviews, and comprehensive insights.",
         category: "Enterprise SaaS",
@@ -39,7 +50,7 @@ export const projectsData = [
         stack: ["Next.js", "TypeScript", "OpenAI", "PostgreSQL", "Docker"]
     },
     {
-        _id: '4',
+        _id: '5',
         title: "Distributed Workflow Engine",
         description: "High-performance workflow orchestration system handling complex enterprise approval chains and resource provisioning",
         category: "Enterprise",
@@ -49,7 +60,7 @@ export const projectsData = [
         stack: [".NET Core", "TypeScript", "MongoDB", "RabbitMQ", "Redis"]
     },
     {
-        _id: '5',
+        _id: '6',
         title: "TrakFunding",
         description: "Personal Finance Tracking App",
         category: "Next",
