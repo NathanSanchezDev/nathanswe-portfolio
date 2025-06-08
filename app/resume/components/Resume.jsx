@@ -2,123 +2,99 @@
 import React, { useRef } from 'react';
 import { LazyMotion, domAnimation, useInView } from 'framer-motion';
 import ReactToPrint from 'react-to-print';
-import { AiOutlineMail, AiOutlinePhone, AiOutlinePrinter } from 'react-icons/ai';
+import { AiOutlineMail, AiOutlinePrinter } from 'react-icons/ai';
 import { FaGraduationCap, FaTools, FaBriefcase, FaProjectDiagram } from 'react-icons/fa';
+import { BsGithub, BsLinkedin, BsGlobe } from 'react-icons/bs';
 
 import 'tailwindcss/tailwind.css';
 
 const resumeData = {
   name: "Nathan Sanchez",
-  role: "Full-Stack Software Developer",
+  location: "Naples, FL",
   email: "nathan1220sanchez@gmail.com",
-  phone: "+1 239-385-2676",
+  linkedin: "linkedin.com/in/nathansanchez239",
+  github: "github.com/NathanSanchezDev",
+  website: "nathanswe.com",
 
-  education: [
-    {
-      degree: "Computer Networking",
-      institution: "Lorenzo Walker Technical Institution",
-      period: "May 2016 - Apr 2017",
-      location: "Naples, FL",
-    },
-    {
-      degree: "Computer Programming",
-      institution: "Lorenzo Walker Technical Institution",
-      period: "May 2017 - Apr 2018",
-      location: "Naples, FL",
-    },
-  ],
-
-  programmingLanguages: ["Python", "JavaScript", "TypeScript", ".NET (C#)"],
-
-  skills: [
-    "AWS (EC2, ELB, etc.)",
-    "Terraform & Infrastructure as Code",
-    "Docker & Containerization",
-    "ReactJS & NextJS",
-    "Flask",
-    "Postgres & MongoDB",
-    ".NET & Blazor",
-    "Entity Framework",
-    "HPC Workload Management",
-  ],
+  summary: "Backend-leaning full-stack engineer with experience building performant APIs and production infrastructure in Go, .NET, and PostgreSQL. Proven ability to own features end-to-end and build tooling that supports team efficiency. Specializes in modernizing legacy systems, implementing enterprise security, and creating developer productivity tools.",
 
   experience: [
     {
       company: "Fischer Identity",
       role: "Software Engineer",
-      period: "April 2024 - Present",
+      period: "April 2024 – Present",
       location: "Naples, FL",
-      description: [
-        "Develop and refine the Blazor-based UI for Fischer Identity’s IAM portal, enhancing user experience and scalability for enterprise clients.",
-        "Integrate .NET Core APIs with Entity Framework, improving authentication workflows, data integrity, and access management performance.",
-        "Implement secure user onboarding, role-based access control (RBAC), and multi-factor authentication, aligning with corporate security best practices.",
-      ],
+      achievements: [
+        "Modernizing enterprise IAM platform with role-based access controls supporting 10,000+ enterprise users",
+        "Migrating admin and self-service capabilities from legacy Tomcat services into modern Blazor + .NET Core portal",
+        "Built reusable frontend components for dynamic form rendering and identity-based workflow automation",
+        "Implemented granular access control features supporting Admin, Delegated Admin, and End User roles",
+        "Developed PowerShell CLI tools automating local environments with Docker, LocalStack, and real-time log tailing",
+        "Designed JWT-authenticated API endpoints maintaining interoperability with legacy Tomcat infrastructure"
+      ]
     },
     {
       company: "Adaptive Computing",
-      role: "Full-Stack Software Developer",
-      period: "November 2023 - April 2024",
+      role: "Full Stack Software Developer",
+      period: "October 2023 – April 2024",
       location: "Naples, FL",
-      description: [
-        "Maintained and improved a sophisticated cloud resource manager application, introducing a streamlined image marketplace to expedite cluster deployments on AWS, Azure, and GCP.",
-        "Integrated the E4S stack (121+ AI/ML and scientific tools) into HPC provisioning workflows, boosting HPC resource availability for complex workloads.",
-        "Created demo websites and internal tools showcasing new product capabilities, contributing to elevated sales and customer engagement.",
-      ],
+      achievements: [
+        "Maintained HPC Cloud On-Demand platform supporting multi-cloud orchestration across AWS, Azure, GCP, and Oracle",
+        "Built Go service managing ephemeral demo sessions with JWT parsing, SSH credential creation, and lifecycle cleanup",
+        "Optimized React cluster UI and MongoDB queries for improved performance and user experience",
+        "Reduced AWS infrastructure costs by 30% through automated resource cleanup tools across development teams",
+        "Participated in CI/CD cycles and infrastructure reliability improvements for cloud bursting deployment scenarios",
+        "Co-developed Next.js demo portal with MongoDB backend and secure iframe delivery for infrastructure simulation"
+      ]
     },
     {
       company: "100Devs",
-      role: "Software Engineer Trainee",
-      period: "Sep 2022 - Oct 2023",
-      location: "Remote, USA",
-      description: [
-        "Collaborated on various front-end projects in a fast-paced environment, honing skills in responsive UI development and modern JavaScript frameworks.",
-        "Mentored fellow trainees, establishing coding best practices and driving collective code quality improvements.",
-        "Authored thorough documentation and testing protocols, ensuring maintainability and reducing defects across multiple codebases.",
-        "Led code reviews and testing sessions to uphold reliability and deliver robust features under tight deadlines.",
-      ],
-    },
+      role: "Full Stack Developer (Apprenticeship)",
+      period: "2022 – 2023",
+      location: "Remote",
+      achievements: [
+        "Completed full-stack program covering React, Node.js, and MongoDB in a collaborative peer-led environment",
+        "Delivered freelance projects for restaurant and solar company clients with UI forms and backend integrations",
+        "Mentored junior developers and led development sprints for production-ready applications",
+        "Gained hands-on experience with Git workflows, REST API development, and collaborative debugging practices"
+      ]
+    }
   ],
 
   projects: [
     {
-      name: "Fischer Identity IAM Portal",
-      role: "Full Stack Developer",
-      period: "April 2024 - Present",
-      location: "Naples, FL",
-      description: [
-        "Build a feature-rich Identity and Access Management portal that consolidates user provisioning, access requests, and authentication flows into a single, cohesive UI.",
-        "Leverage Blazor for a responsive front end, integrating real-time notifications and seamless transitions for improved end-user experience.",
-        "Enhance data interactions via Entity Framework in .NET, implementing query optimizations and transaction-safe data handling for mission-critical identity operations.",
-        "Collaborate with the IAM infrastructure team to add advanced security measures like multi-factor authentication and role-based access control, meeting stringent enterprise requirements.",
-        "Document integration approaches and coding patterns, accelerating onboarding for new developers and maintaining consistent code quality.",
-      ],
+      name: "Go-Insight – Distributed Observability Platform",
+      period: "2024",
+      technologies: "Go, PostgreSQL, Docker, Kubernetes",
+      achievements: [
+        "Engineered high-performance observability system achieving sub-10ms query times using PostgreSQL with strategic indexing",
+        "Built secure REST APIs with rate limiting and authentication, supporting 100+ concurrent clients through thread-safe handlers",
+        "Designed distributed trace lifecycle with parent-child span relationships for microservice monitoring",
+        "Implemented comprehensive filtering, pagination, and real-time log correlation across services",
+        "Created production-ready deployment with Docker containerization, migration tooling, and detailed documentation"
+      ]
     },
     {
-      name: "Adaptive Computing Demo Website",
-      role: "Full Stack Developer",
-      period: "Jan 2024 - Feb 2024",
-      location: "Naples, FL",
-      description: [
-        "Developed a user-friendly demonstration platform that showcases on-demand data center and HPC capabilities, including dynamic provisioning of E4S-based AI/ML clusters.",
-        "Created an admin dashboard to manage demo accounts, track resource usage, and collect user feedback, significantly enhancing customer engagement.",
-        "Utilized modern JavaScript (TypeScript), Next.js 14, and the Shadcn UI library for polished front-end experiences and maintainable code structure.",
-        "Implemented secure sign-up and authentication flows, integrating Node-based microservices with MongoDB for data persistence and user session management.",
-      ],
-    },
-    {
-      name: "ODDC Cloud Resource Manager",
-      role: "Full Stack Developer",
-      period: "Nov 2023 - Feb 2024",
-      location: "Naples, FL",
-      description: [
-        "Collaborated with a 10-person team to modernize a large-scale cloud resource manager, streamlining HPC cluster deployments with an innovative marketplace of pre-configured images.",
-        "Refactored a complex codebase for improved clarity and maintainability, cutting technical debt and simplifying on-boarding for new developers.",
-        "Expanded Terraform-based infrastructure to support multiple cloud providers, including AWS, Azure, GCP, and Oracle, enhancing product versatility.",
-        "Implemented an integrated HPC workflow with the E4S stack, showcasing 121 specialized AI/ML and scientific packages for immediate user deployment.",
-        "Contributed to iterative release cycles, ensuring top-notch reliability and performance for enterprise and research-focused HPC clients.",
-      ],
-    },
+      name: "AIHelperLibrary – Multi-Provider AI SDK for .NET",
+      period: "2024",
+      technologies: "C#, .NET Core, OpenAI, Anthropic, NuGet",
+      achievements: [
+        "Developed unified SDK supporting OpenAI and Anthropic Claude models with consistent request handling",
+        "Implemented advanced prompt workflows with multi-turn chat, dynamic memory, and intelligent parameter tuning",
+        "Built enterprise features including retry logic, proxy support, and automatic model-specific parameter optimization",
+        "Created comprehensive testing console with model selection, session history, and real-time validation",
+        "Published to NuGet with extensive documentation and examples, adopted by 500+ developers"
+      ]
+    }
   ],
+
+  technicalSkills: {
+    backend: ["Go", ".NET Core", "PostgreSQL", "REST APIs", "JWT Auth", "Node.js"],
+    frontend: ["React", "Blazor", "Next.js", "TypeScript", "HTML", "CSS"],
+    infrastructure: ["Docker", "Kubernetes", "GitHub Actions", "PowerShell CLI"],
+    databases: ["PostgreSQL", "MongoDB", "SQL Server"],
+    cloudTools: ["AWS", "Azure", "GCP", "LocalStack", "Git", "Postman", "SSH"]
+  }
 };
 
 const Resume = () => {
@@ -133,178 +109,182 @@ const Resume = () => {
                    bg-neutral-50 dark:bg-neutral-900"
       >
         <div className="max-w-5xl mx-auto" ref={resumeRef}>
-          {/* Header / Intro */}
+          {/* Header */}
           <div
             className={`transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
           >
             <div className="flex flex-col items-center text-center mb-8">
-              <h1 className="text-3xl font-extrabold mb-1 dark:text-gray-100">
+              <h1 className="text-4xl font-extrabold mb-2 dark:text-gray-100">
                 {resumeData.name}
               </h1>
-              <h2 className="text-xl text-gray-700 dark:text-gray-300">
-                {resumeData.role}
-              </h2>
-              <div className="mt-4 flex flex-col sm:flex-row sm:space-x-6 dark:text-gray-400 text-gray-600">
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                {resumeData.location}
+              </p>
+              
+              {/* Contact Info */}
+              <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 dark:text-gray-400 mb-4">
                 <span className="flex items-center">
                   <AiOutlineMail className="mr-1" />
-                  {resumeData.email}
+                  <a href={`mailto:${resumeData.email}`} className="hover:text-blue-500">
+                    {resumeData.email}
+                  </a>
                 </span>
                 <span className="flex items-center">
-                  <AiOutlinePhone className="mr-1" />
-                  {resumeData.phone}
+                  <BsLinkedin className="mr-1" />
+                  <a href={`https://${resumeData.linkedin}`} target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
+                    {resumeData.linkedin}
+                  </a>
+                </span>
+                <span className="flex items-center">
+                  <BsGithub className="mr-1" />
+                  <a href={`https://${resumeData.github}`} target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
+                    {resumeData.github}
+                  </a>
+                </span>
+                <span className="flex items-center">
+                  <BsGlobe className="mr-1" />
+                  <a href={`https://${resumeData.website}`} target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
+                    {resumeData.website}
+                  </a>
                 </span>
               </div>
 
-              <div className="mt-4">
-                <ReactToPrint
-                  trigger={() => (
-                    <button
-                      className="inline-flex items-center px-4 py-2 bg-neutral-200 dark:bg-neutral-700 
-                                 text-gray-800 dark:text-gray-200 rounded 
-                                 hover:bg-neutral-300 dark:hover:bg-neutral-600 
-                                 transition-colors"
-                    >
-                      <AiOutlinePrinter className="mr-2" />
-                      Print / Save PDF
-                    </button>
-                  )}
-                  content={() => resumeRef.current}
-                />
-              </div>
+              <ReactToPrint
+                trigger={() => (
+                  <button
+                    className="inline-flex items-center px-4 py-2 bg-neutral-200 dark:bg-neutral-700 
+                               text-gray-800 dark:text-gray-200 rounded 
+                               hover:bg-neutral-300 dark:hover:bg-neutral-600 
+                               transition-colors"
+                  >
+                    <AiOutlinePrinter className="mr-2" />
+                    Print / Save PDF
+                  </button>
+                )}
+                content={() => resumeRef.current}
+              />
             </div>
 
-            {/* MAIN CONTENT WRAPPER */}
-            <div className="space-y-8">
-              {/* Education */}
-              <div className="w-full mx-auto">
-                <h3 className="text-2xl font-semibold mb-3 flex items-center dark:text-gray-100">
-                  <FaGraduationCap className="mr-2" />
-                  Education
-                </h3>
-                <div className="space-y-4">
-                  {resumeData.education.map((item, index) => (
-                    <div
-                      key={index}
-                      className="p-4 rounded border dark:border-neutral-700 
-                                 bg-white dark:bg-neutral-800 
-                                 transition-colors duration-300"
-                    >
-                      <h4 className="text-lg font-bold dark:text-gray-100">
-                        {item.degree}
-                      </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">
-                        {item.institution} | {item.period} | {item.location}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            {/* Summary */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold mb-3 flex items-center dark:text-gray-100">
+                Summary
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                {resumeData.summary}
+              </p>
+            </div>
 
-              {/* Skills */}
-              <div>
-                <h3 className="text-2xl font-semibold mb-3 flex items-center dark:text-gray-100">
-                  <FaTools className="mr-2" />
-                  Skills & Languages
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            {/* Experience */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold mb-4 flex items-center dark:text-gray-100">
+                <FaBriefcase className="mr-2" />
+                Experience
+              </h3>
+              <div className="space-y-6">
+                {resumeData.experience.map((job, index) => (
                   <div
+                    key={index}
                     className="p-4 rounded border dark:border-neutral-700 
                                bg-white dark:bg-neutral-800 
                                transition-colors duration-300"
                   >
-                    <h4 className="text-lg font-bold mb-2 dark:text-gray-100">
-                      Programming Languages
-                    </h4>
-                    <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                      {resumeData.programmingLanguages.map((language, index) => (
-                        <li key={index}>{language}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div
-                    className="p-4 rounded border dark:border-neutral-700 
-                               bg-white dark:bg-neutral-800 
-                               transition-colors duration-300"
-                  >
-                    <h4 className="text-lg font-bold mb-2 dark:text-gray-100">
-                      Technologies & Tools
-                    </h4>
-                    <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                      {resumeData.skills.map((skill, index) => (
-                        <li key={index}>{skill}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Experience (Card-Based Layout) */}
-              <div>
-                <h3 className="text-2xl font-semibold mb-3 flex items-center dark:text-gray-100">
-                  <FaBriefcase className="mr-2" />
-                  Experience
-                </h3>
-                <div className="space-y-6">
-                  {resumeData.experience.map((expItem, index) => (
-                    <div
-                      key={index}
-                      className="p-4 rounded border dark:border-neutral-700 
-                                 bg-white dark:bg-neutral-800 
-                                 transition-colors duration-300"
-                    >
-                      <h4 className="text-lg font-bold dark:text-gray-100">
-                        {expItem.company}
-                      </h4>
-                      <p className="text-sm italic text-gray-600 dark:text-gray-300 mb-2">
-                        {expItem.role} — {expItem.period} — {expItem.location}
-                      </p>
-                      <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                        {expItem.description.map((desc, i) => (
-                          <li key={i}>{desc}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Projects */}
-              <div>
-                <h3 className="text-2xl font-semibold mb-3 flex items-center dark:text-gray-100">
-                  <FaProjectDiagram className="mr-2" />
-                  Projects
-                </h3>
-                <div className="space-y-6">
-                  {resumeData.projects.map((project, index) => (
-                    <div
-                      key={index}
-                      className="p-4 rounded border dark:border-neutral-700 
-                                 bg-white dark:bg-neutral-800 
-                                 transition-colors duration-300"
-                    >
-                      <div className="flex justify-between items-center mb-2">
-                        <h4 className="text-lg font-bold dark:text-gray-100">
-                          {project.name}
+                    <div className="flex justify-between items-start mb-2">
+                      <div>
+                        <h4 className="text-xl font-bold dark:text-gray-100">
+                          {job.role}
                         </h4>
-                        <span className="text-sm text-gray-600 dark:text-gray-300">
-                          {project.period}
-                        </span>
+                        <p className="text-lg font-semibold text-blue-600 dark:text-blue-400">
+                          {job.company}
+                        </p>
                       </div>
-                      <p className="text-sm italic text-gray-500 dark:text-gray-400 mb-2">
-                        {project.role} - {project.location}
-                      </p>
-                      <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                        {project.description.map((desc, i) => (
-                          <li key={i}>{desc}</li>
-                        ))}
-                      </ul>
+                      <div className="text-right">
+                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                          {job.period}
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                          {job.location}
+                        </p>
+                      </div>
                     </div>
-                  ))}
-                </div>
+                    <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 text-sm">
+                      {job.achievements.map((achievement, i) => (
+                        <li key={i}>{achievement}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
-            {/* END MAIN CONTENT */}
+
+            {/* Projects */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold mb-4 flex items-center dark:text-gray-100">
+                <FaProjectDiagram className="mr-2" />
+                Projects
+              </h3>
+              <div className="space-y-6">
+                {resumeData.projects.map((project, index) => (
+                  <div
+                    key={index}
+                    className="p-4 rounded border dark:border-neutral-700 
+                               bg-white dark:bg-neutral-800 
+                               transition-colors duration-300"
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-lg font-bold dark:text-gray-100">
+                        {project.name}
+                      </h4>
+                      <span className="text-sm text-gray-600 dark:text-gray-300">
+                        {project.period}
+                      </span>
+                    </div>
+                    <p className="text-sm italic text-gray-500 dark:text-gray-400 mb-2">
+                      {project.technologies}
+                    </p>
+                    <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 text-sm">
+                      {project.achievements.map((achievement, i) => (
+                        <li key={i}>{achievement}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Technical Skills */}
+            <div>
+              <h3 className="text-2xl font-semibold mb-4 flex items-center dark:text-gray-100">
+                <FaTools className="mr-2" />
+                Technical Skills
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                {Object.entries(resumeData.technicalSkills).map(([category, skills]) => (
+                  <div
+                    key={category}
+                    className="p-4 rounded border dark:border-neutral-700 
+                               bg-white dark:bg-neutral-800 
+                               transition-colors duration-300"
+                  >
+                    <h4 className="text-lg font-bold mb-2 dark:text-gray-100 capitalize">
+                      {category.replace(/([A-Z])/g, ' $1').trim()}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {skills.map((skill, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 text-xs bg-blue-100 dark:bg-blue-900 
+                                     text-blue-800 dark:text-blue-200 rounded"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
