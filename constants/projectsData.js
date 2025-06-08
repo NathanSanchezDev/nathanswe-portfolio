@@ -2,7 +2,7 @@ export const projectsData = [
     {
         _id: '1',
         title: "AI Helper Library",
-        description: "Production-grade .NET library for OpenAI API integrations with 1,000+ downloads, featuring robust session management and comprehensive test coverage",
+        description: "Production-grade .NET library for OpenAI API integrations with 500+ downloads, featuring robust session management and comprehensive test coverage",
         category: "C# .NET",
         images: [
             "projects/ailibhelp.png",
