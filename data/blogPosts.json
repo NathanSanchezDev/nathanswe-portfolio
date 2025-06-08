@@ -1205,5 +1205,216 @@
             ]
         },
         "comingSoon": false
+    },
+    {
+        "id": 9,
+        "slug": "go-insight-observability-platform",
+        "title": "I Built an Observability Platform in Go Because Datadog is Overkill",
+        "description": "How I went from frustrated developer to building a production-ready observability system that handles 100+ concurrent clients with sub-10ms response times.",
+        "author": "Nathan Sanchez",
+        "date": "June 8, 2025",
+        "content": {
+            "sections": [
+                {
+                    "type": "paragraph",
+                    "text": "Here's the thing about observability tools: the good ones are expensive, and the free ones are basically just fancy log viewers. I've spent way too much time looking longingly at Datadog demos, knowing I could never justify the cost for my projects. When you're working on smaller projects, side businesses, or just want to understand what's happening in your applications, you're stuck between console.log debugging and enterprise pricing."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "So I did what any reasonable developer would do: I built my own."
+                },
+                {
+                    "type": "heading",
+                    "text": "The Problem: Enterprise Tools for Non-Enterprise Budgets",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Working at Fischer Identity and previously at Adaptive Computing, I got spoiled by enterprise observability tools. When something broke, I could jump into Datadog, trace the exact request path, correlate logs with metrics, and usually find the issue in minutes. It's powerful stuff."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "But then I'd go home and work on personal projects or help friends with their startups, and suddenly I'm back to console.log debugging and hoping for the best. The gap between \"nothing\" and \"enterprise-grade\" felt huge."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "**Logs with context** - Not just text dumps, but structured data I could actually query"
+                        },
+                        {
+                            "text": "**Performance metrics** - Response times, error rates, the basics"
+                        },
+                        {
+                            "text": "**Distributed tracing** - Because microservices are everywhere now"
+                        },
+                        {
+                            "text": "**Self-hosted** - No vendor lock-in, no surprise bills"
+                        },
+                        {
+                            "text": "**Actually fast** - If the monitoring tool is slow, what's the point?"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Enter Go-Insight: Observability That Doesn't Break the Bank",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Go-Insight started as a weekend project but quickly grew into something I actually wanted to use in production. The core idea was simple: build a lightweight, self-hosted observability platform that gives you 80% of what Datadog offers for 20% of the complexity."
+                },
+                {
+                    "type": "heading",
+                    "text": "The Tech Stack",
+                    "level": 3
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I chose **Go** for the backend because native concurrency makes handling multiple clients trivial, single binary deployment is still magical, and the ecosystem with Gorilla Mux and pgx driver had everything I needed."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "**PostgreSQL** for storage because ACID compliance matters when debugging production issues, strategic indexes turned O(n) queries into O(log n), and JSON support gives flexible metadata storage without NoSQL complexity."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "**Docker** for deployment because of consistency across environments, isolation without dependency conflicts, and easy scalability by adding more instances behind a load balancer."
+                },
+                {
+                    "type": "heading",
+                    "text": "The Architecture: Simple but Effective",
+                    "level": 2
+                },
+                {
+                    "type": "code",
+                    "text": "┌─────────────┐    ┌─────────────┐    ┌─────────────┐\n│   Your App  │───▶│ Go-Insight  │───▶│ PostgreSQL  │\n│             │    │   API       │    │  Database   │\n└─────────────┘    └─────────────┘    └─────────────┘\n                           │\n                           ▼\n                   ┌─────────────┐\n                   │  Dashboard  │\n                   │   (Web UI)  │\n                   └─────────────┘"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The API exposes simple REST endpoints: POST /logs for ingesting structured log data, POST /metrics for storing performance metrics, POST /traces for creating distributed traces, and GET /logs?service=api&level=ERROR for querying your data."
+                },
+                {
+                    "type": "heading",
+                    "text": "Performance: The Numbers That Matter",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Here's where Go-Insight gets interesting. These aren't theoretical benchmarks—this is real performance data from my test environment:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "**Sub-10ms response times** for filtered log queries (with proper indexing)"
+                        },
+                        {
+                            "text": "**100+ concurrent clients** handled without breaking a sweat"
+                        },
+                        {
+                            "text": "**~5ms average** for service-based queries (the most common use case)"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "The Secret Sauce: Strategic Database Indexing",
+                    "level": 3
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Most logging platforms slow down as data grows. I solved this with composite indexes that PostgreSQL loves:"
+                },
+                {
+                    "type": "code",
+                    "text": "-- Service-based queries (90% of real usage)\nCREATE INDEX idx_logs_service_timestamp ON logs(service_name, timestamp DESC);\n\n-- Error investigation\nCREATE INDEX idx_logs_level_timestamp ON logs(log_level, timestamp DESC);\n\n-- Distributed tracing\nCREATE INDEX idx_logs_trace_id ON logs(trace_id) WHERE trace_id IS NOT NULL;"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The result? **10-100x performance improvement** over naive table scans. A 1 million record query that used to take 45 seconds now returns in 5ms."
+                },
+                {
+                    "type": "heading",
+                    "text": "Real-World Usage: What It Actually Looks Like",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Here's how I integrate Go-Insight into a typical .NET API:"
+                },
+                {
+                    "type": "code",
+                    "text": "// Simple log ingestion\npublic async Task LogError(string message, Exception ex)\n{\n    var logData = new {\n        service_name = \"user-api\",\n        log_level = \"ERROR\",\n        message = message,\n        metadata = new {\n            exception = ex.Message,\n            stack_trace = ex.StackTrace,\n            user_id = GetCurrentUserId()\n        }\n    };\n    \n    await _httpClient.PostAsJsonAsync(\"http://go-insight:8080/logs\", logData);\n}\n\n// Performance tracking\npublic async Task<IActionResult> GetUser(int id)\n{\n    var stopwatch = Stopwatch.StartNew();\n    \n    try {\n        var user = await _userService.GetUserAsync(id);\n        await LogMetric(\"get-user\", 200, stopwatch.ElapsedMilliseconds);\n        return Ok(user);\n    }\n    catch (Exception ex) {\n        await LogMetric(\"get-user\", 500, stopwatch.ElapsedMilliseconds);\n        await LogError(\"Failed to get user\", ex);\n        throw;\n    }\n}"
+                },
+                {
+                    "type": "heading",
+                    "text": "What I Learned Building This",
+                    "level": 2
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        {
+                            "text": "**Simplicity Wins** - The temptation was to build every feature Datadog has. Instead, I focused on the 20% of features that solve 80% of problems. Logs, metrics, and basic tracing cover most debugging scenarios."
+                        },
+                        {
+                            "text": "**Performance is a Feature** - A slow observability tool is worse than no tool. I spent significant time optimizing queries and building efficient indexes. The sub-10ms response times aren't just nice-to-have, they make the tool actually useful."
+                        },
+                        {
+                            "text": "**Self-Hosting is Liberating** - No vendor lock-in means I can modify the platform for my specific needs. Need a custom dashboard? Build it. Want to store additional metadata? Just add a column."
+                        },
+                        {
+                            "text": "**Go is Perfect for This** - The combination of great performance, simple deployment, and excellent HTTP handling made Go the obvious choice. The entire platform compiles to a single binary that just works."
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "The Road Ahead",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Go-Insight is still evolving. Current priorities include real-time streaming with WebSockets, advanced alerting based on log patterns, multi-language SDKs (currently building the .NET client), and Grafana integration for advanced visualizations."
+                },
+                {
+                    "type": "heading",
+                    "text": "Want to Try It?",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Go-Insight is open source and production-ready. You can spin up a complete observability stack in under 5 minutes:"
+                },
+                {
+                    "type": "code",
+                    "text": "git clone https://github.com/NathanSanchezDev/go-insight\ncd go-insight\ndocker-compose up -d"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "That's it. You now have log aggregation and querying, performance metrics tracking, distributed tracing, a web UI for investigation, and a REST API for integration."
+                },
+                {
+                    "type": "heading",
+                    "text": "The Bottom Line",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "text": "You don't need to choose between console.log and enterprise pricing. Go-Insight proves you can have production-grade observability without the enterprise price tag."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Is it as feature-complete as Datadog? No. But for 90% of debugging scenarios, it's more than enough. And when you need something custom, you can just build it yourself."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Sometimes the best tool is the one you control."
+                }
+            ]
+        },
+        "comingSoon": false
     }
 ]
