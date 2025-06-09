@@ -5,9 +5,13 @@ export const projectsData = [
         description: "Production-grade .NET library for OpenAI API integrations with 500+ downloads, featuring robust session management and comprehensive test coverage",
         category: "C# .NET",
         images: [
-            "projects/ailibhelp.png",
+            "projects/aihelperdemo.png",
+            "projects/aihelperdemo2.png",
+            "projects/aihelperdemo3.png",
+            "projects/aihelperdemo4.png",
+            "projects/aihelperdemo5.png",
         ],
-        liveUrl: "https://www.nuget.org/packages/AIHelperLibrary/",
+        liveUrl: "https://aihelper.nathanswe.com/",
         repoUrl: "https://github.com/NathanSanchezDev/ai-helper-library",
         stack: [".NET Core", "OpenAI API", "xUnit", "NuGet"]
     },
